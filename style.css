@@ -1,8 +1,26 @@
-*,*::before,*::after{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Fonts */
+@font-face {
+    font-family: 'Barlow';
+    src: url('./fonts/Barlow,Fraunces,Josefin_Sans,Karla,Poppins,etc/Barlow/Barlow-Regular.ttf') format('truetype');
 }
+@font-face {
+    font-family: 'Josefin_Sans';
+    src: url('./fonts/Barlow,Fraunces,Josefin_Sans,Karla,Poppins,etc/Josefin_Sans/JosefinSans-VariableFont_wght.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Fraunces';
+    src: url('./fonts/Barlow,Fraunces,Josefin_Sans,Karla,Poppins,etc/Fraunces/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('./fonts/Barlow,Fraunces,Josefin_Sans,Karla,Poppins,etc/Poppins/Poppins-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Barlow,Fraunces,Josefin_Sans,Karla,Poppins,etc/Roboto/Roboto-Regular.ttf') format('truetype');
+}
+
+/* Variables */
 :root{
     --softRed: hsl(7, 99%, 70%);
     --yellow: hsl(51, 100%, 49%);
@@ -15,8 +33,190 @@
     --grayishBlue: hsl(210, 4%, 67%);
     --white: hsl(0, 0%, 100%);
 }
+
+/* Universal Selector */
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow','Poppins','Roboto';
+}
+
+/* Styling start Here*/
+body{
+    font-size: 1.225rem;
+}
+/* Header */
+header{
+    background-image: url('./images/desktop/image-header.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--white);
+    text-align: center;
+    min-height: 100vh;
+    padding: 0 0 1rem 0;
+}
+h1{
+    margin: 7rem 0 5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 3rem;
+}
+.headerOrange img{
+    width: 100%;
+}
+header nav{
+    justify-content: space-between;
+    padding: 2rem 5%;
+}
+.desktopNav button{
+    padding: .65rem 2rem;
+    border-radius: 1.25rem;
+    text-transform: uppercase;
+    background-color: var(--white);
+}
+/* main */
+main{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+main div{
+    width: 100%;
+    padding:4rem 8rem;
+    background-color: var(--white);
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 600px;
+    align-content: center;
+}main div button{
+    z-index: 1;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+main div button::before{
+    content: "";
+    width: 110%;
+    height: 10px;
+    bottom: 0;
+    left: -5%;
+    border-radius: 5px;
+    background-color: var(--yellow);
+    position: absolute;
+    z-index: -1;
+}
+main div:nth-child(3) button::before{
+    background-color: var(--softRed);
+}
+main div:nth-child(2){
+    background-image: url('./images/desktop/image-transform.jpg');
+}
+main div:nth-child(3){
+    grid-area: 2/2/3/3;
+}
+main div:nth-child(4){
+    background-image: url('./images/desktop/image-stand-out.jpg');
+}
+main div:nth-child(5){
+    background-image: url('./images/desktop/image-graphic-design.jpg');
+    align-content: end;
+    text-align: center;
+}
+main div:nth-child(6){
+    background-image: url('./images/desktop/image-photography.jpg');
+    align-content: end;
+    text-align: center;
+}
+main div:nth-child(5) p,main div:nth-child(6) p{
+    margin: 1rem 0 0 0;
+}
+main div:nth-child(5) p,
+main div:nth-child(5) h3{
+    color: var(--darkDesaturatedCyan);
+
+}
+main div:nth-child(6) p,
+main div:nth-child(6) h3{
+    color: var(--veryDarkDesaturatedBlue);
+}
+main div h2{
+    font-size: 3rem;
+}
+main div p{
+    margin: 2rem 0;
+}
+
+/* Testimonials */
+.testimonials{
+    padding: 5rem 5%;
+    text-align: center;
+}
+.testimonials h4{
+    margin: 3rem 0;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: var(--darkModerateCyan);
+    letter-spacing: .3em;
+}
+.container{
+    gap: 1rem;
+}
+.container div img{
+    border-radius: 50%;
+    width: 60px;
+    margin: 0 0 2.5rem 0;
+}
+.container div h5{
+    margin: 2.5rem 0 0 0;
+}
+
+small{
+    font-size: 1rem;
+}
+/* Gallery */
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.gallery div{
+    width: 100%;
+}
+.gallery div img{
+    width: 100%;
+    height: 100%;
+}
+/* Footer */
+footer{
+    background-color: var(--darkModerateCyan);
+    padding: 2rem 5%;
+    color: var(--darkDesaturatedCyan);
+    text-align: center;
+}
+
+footer ul{
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+footer div{
+    justify-content: center;
+    gap: .5rem;
+    margin-bottom: 1rem;
+}
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
+h1,h2,h3,h4,h5,button{
+    font-family: 'Fraunces','Josefin_Sans';
+}
+p{
+    color: var(--darkGrayishBlue);
+    font-weight: 600;
+}
+a{
+    text-decoration: none;
+}
 ul{
     list-style: none;
 }
@@ -24,15 +224,72 @@ button{
     cursor: pointer;
     outline: none;
     border: none;
+    position: relative;
+    background-color: unset;
+}
+/* Html Classes */
+.gap{
+    gap: 2rem
 }
 .d-flex{
     display: flex;
     align-items: center;
     align-content: center;
 }
-.d-none{
+.d-none,
+.mobileImage{
     display: none;
 }
 .d-block{
     display: block;
+}
+@media(max-width: 850px){
+    .desktopNav,
+    .desktopImage{
+        display: none;
+    }
+    .mobileImage{
+        display: block;
+    }
+    header{
+        background-image: url('./images/mobile/image-header.jpg');
+        min-height: 55vh;
+    }
+    h1{
+        font-size: 2.5rem;
+        margin: 5rem 0 4rem 0;
+    }
+    main{
+        display: flex;
+        flex-direction: column;
+    }
+    main div{
+        padding: 2rem;
+        min-height: 500px;
+        text-align: center;
+    }
+    main div h2{
+        line-height: 3rem;
+        font-size: 2.5rem;
+    } 
+    main div p{
+        margin: 1.5rem 0;
+        padding: 0 1rem;
+        word-spacing: 0.25em;
+    } 
+    .container{
+        flex-direction: column;
+        gap: 4rem;
+    } 
+    .container div img,
+    .container div h4{
+        margin: 0 0 1.5rem 0;
+    }
+    .gallery{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    footer ul{
+        width: 100%;
+        gap: unset;
+    }
 }
