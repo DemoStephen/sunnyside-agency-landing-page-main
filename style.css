@@ -45,6 +45,8 @@
 /* Styling start Here*/
 body{
     font-size: 1.225rem;
+    max-width: 95rem;
+    margin: auto;
 }
 /* Header */
 header{
@@ -69,6 +71,7 @@ h1{
 header nav{
     justify-content: space-between;
     padding: 2rem 5%;
+    position: relative;
 }
 .desktopNav button{
     padding: .65rem 2rem;
@@ -244,9 +247,32 @@ button{
     display: block;
 }
 @media(max-width: 850px){
-    .desktopNav,
     .desktopImage{
         display: none;
+    }
+    .desktopNav{
+        visibility: hidden;
+    }
+    .desktopNav{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 90%;
+        margin: 7rem 5%;
+        flex-direction: column;
+        background-color: var(--white);
+        gap: 1.5rem;
+        padding: 2rem;
+        font-weight: 600;
+        z-index: 100;
+    }
+    .desktopNav ul{
+        flex-direction: column;
+        color: var(--veryDarkGrayishBlue);
+        gap: 1.5rem
+    }
+    .desktopNav button{
+        background-color: var(--yellow);
     }
     .mobileImage{
         display: block;
