@@ -77,6 +77,8 @@ header nav{
     padding: .65rem 2rem;
     border-radius: 1.25rem;
     text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.125rem;
     background-color: var(--white);
 }
 /* main */
@@ -114,13 +116,15 @@ main div button::before{
 main div:nth-child(3) button::before{
     background-color: var(--softRed);
 }
-main div:nth-child(2){
+main div:nth-child(1){
     background-image: url('./images/desktop/image-transform.jpg');
-}
-main div:nth-child(3){
-    grid-area: 2/2/3/3;
+    grid-area: 1/2/2/3;
+
 }
 main div:nth-child(4){
+    grid-area: 2/2/3/3;
+}
+main div:nth-child(3){
     background-image: url('./images/desktop/image-stand-out.jpg');
 }
 main div:nth-child(5){
@@ -222,6 +226,9 @@ a{
 }
 ul{
     list-style: none;
+}
+li{
+    cursor: pointer;
 }
 button{
     cursor: pointer;
